@@ -23,7 +23,7 @@ const { randomStudentList } = require('./studentList');
 	const db = {
 		categories: categoryList,
 		products: productList,
-		cites: cityList,
+		cities: cityList,
 		students: studentList
 	}
 
