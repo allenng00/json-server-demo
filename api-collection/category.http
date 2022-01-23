@@ -1,0 +1,44 @@
+@baseUrl = http://localhost:3000/api
+@resourceName = products
+
+## Posts
+# @name getAll
+GET {{baseUrl}}/{{resourceName}}
+
+###
+
+# @name filter
+GET {{baseUrl}}/{{resourceName}}?price_gte=200
+
+###
+# @name pagination
+GET {{baseUrl}}/{{resourceName}}?_page=1&_limit=10
+
+
+###
+# @name addNew
+POST {{baseUrl}}/{{resourceName}}
+content-type: application/json
+
+{
+	"title": "json-server",
+	"author": "nhk"
+}
+
+###
+# @name update
+PATCH  {{baseUrl}}/{{resourceName}}/2
+content-type: application/json
+
+{
+	"title": "hahah",
+	"author": "nhk"
+}
+
+###
+# @name remove
+DELETE {{baseUrl}}/{{resourceName}}/2
+content-type: application/json
+
+
+
