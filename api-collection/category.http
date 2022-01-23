@@ -1,5 +1,5 @@
 @baseUrl = http://localhost:3000/api
-@resourceName = products
+@resourceName = categories
 
 ## Posts
 # @name getAll
@@ -8,7 +8,7 @@ GET {{baseUrl}}/{{resourceName}}
 ###
 
 # @name filter
-GET {{baseUrl}}/{{resourceName}}?price_gte=200
+GET {{baseUrl}}/{{resourceName}}
 
 ###
 # @name pagination
@@ -20,24 +20,16 @@ GET {{baseUrl}}/{{resourceName}}?_page=1&_limit=10
 POST {{baseUrl}}/{{resourceName}}
 content-type: application/json
 
-{
-	"title": "json-server",
-	"author": "nhk"
-}
 
 ###
 # @name update
-PATCH  {{baseUrl}}/{{resourceName}}/2
+PATCH  {{baseUrl}}/{{resourceName}}/
 content-type: application/json
 
-{
-	"title": "hahah",
-	"author": "nhk"
-}
 
 ###
 # @name remove
-DELETE {{baseUrl}}/{{resourceName}}/2
+DELETE {{baseUrl}}/{{resourceName}}/
 content-type: application/json
 
 
