@@ -1,26 +1,27 @@
 
-export const randomProductList = (fakerModule, categoryList, numberPerCategory) => {
-	const productList = [];
-	if (numberPerCategory > 0) {
-		categoryList.forEach((category) => {
-			Array.from(new Array(numberPerCategory)).forEach(() => {
-				const product = {
-					id: faker.datatype.uuid(),
-					categoryId: category.id,
-					name: faker.commerce.productName(),
-					price: Number.parseFloat(faker.commerce.price()),
-					description: faker.commerce.productDescription(),
-					thumbnailUrl: faker.image.imageUrl(400, 400),
-					color: faker.commerce.color(),
-					createdAt: Date.now(),
-					updatedAt: Date.now()
-				}
+const randomStudentList = (fakerModule, cityList, totalNumber) => {
+	const studentList = [];
+	if (totalNumber > 0) {
+		const countCities = cityList.length;
+		Array.from(new Array(totalNumber)).forEach(() => {
+			const cityIndex = Math.floor(Math.random() * countCities);
 
-				productList.push(product)
-			})
+			const student = {
+				id: fakerModule.datatype.uuid(),
+				name: fakerModule.fake('{{name.lastName}} {{name.firstName}}'),
+				age: fakerModule.datatype.number({ min: 10, max: 50 }),
+				gender: fakerModule.name.gender(true),
+				mark: fakerModule.datatype.float({ min: 0, max: 10 }),
+				city: cityList[cityIndex].code,
+				createdAt: Date.now(),
+				updatedAt: Date.now()
+			}
 
+			studentList.push(student)
 		})
+
 	}
-	return productList;
+	return studentList;
 
 };
+module.exports = { randomStudentList };
