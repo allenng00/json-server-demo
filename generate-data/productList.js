@@ -1,5 +1,5 @@
 
-export const randomProductList = (fakerModule, categoryList, numberPerCategory) => {
+const randomProductList = (fakerModule, categoryList, numberPerCategory) => {
 	const productList = [];
 	if (numberPerCategory > 0) {
 		categoryList.forEach((category) => {
@@ -23,4 +23,4 @@ export const randomProductList = (fakerModule, categoryList, numberPerCategory) 
 	}
 	return productList;
 
-};
+}; module.exports = { randomProductList };

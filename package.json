@@ -6,8 +6,8 @@
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"dev": "nodemon -L main.js --ignore db.json",
-		"start": "npm run generate & node main.js",
-		"generate": "node generate-data.js"
+		"start": "node main.js",
+		"generate": "node generate-data/index.js"
 	},
 	"keywords": [
 		"json-server"
