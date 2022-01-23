@@ -1,0 +1,49 @@
+@baseUrl = http://localhost:3000/api
+@resourceName = products
+
+## Posts
+# @name getAll
+GET {{baseUrl}}/{{resourceName}}
+
+###
+
+# @name filter
+GET {{baseUrl}}/{{resourceName}}
+
+###
+# @name pagination
+GET {{baseUrl}}/{{resourceName}}?_page=1&_limit=10
+
+
+###
+# @name addNew
+POST {{baseUrl}}/{{resourceName}}
+content-type: application/json
+
+ {
+    "categoryId": "fac61e2e-7ff4-4acf-87a2-e8679e694139",
+    "name": "Practical Soft Shoes",
+    "price": 100,
+    "description": "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive",
+    "thumbnailUrl": "http://placeimg.com/400/400",
+    "color": "blue"
+  }
+
+###
+# @name update
+PATCH  {{baseUrl}}/{{resourceName}}/-Ga8FMl
+content-type: application/json
+
+ {
+    "name": "Practical Soft Shoes",
+    "price": 112,
+    "color": "red"
+  }
+
+###
+# @name remove
+DELETE {{baseUrl}}/{{resourceName}}/
+content-type: application/json
+
+
+
